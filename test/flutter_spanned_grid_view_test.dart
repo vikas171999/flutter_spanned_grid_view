@@ -23,7 +23,8 @@ Widget buildTestGrid({
     home: Scaffold(
       body: SpannedGridView<TestGridItem>(
         items: items,
-        itemBuilder: (context, item, index) => Text(item.label, key: ValueKey(item.id)),
+        itemBuilder: (context, item, index) =>
+            Text(item.label, key: ValueKey(item.id)),
         maxColumns: maxColumns,
         crossAxisSpacing: crossAxisSpacing,
         mainAxisSpacing: mainAxisSpacing,
@@ -36,7 +37,8 @@ Widget buildTestGrid({
 
 void main() {
   testWidgets('renders correct number of items', (tester) async {
-    final items = List.generate(5, (i) => TestGridItem('id$i', label: 'Item $i'));
+    final items =
+        List.generate(5, (i) => TestGridItem('id$i', label: 'Item $i'));
     await tester.pumpWidget(buildTestGrid(items: items));
     for (final item in items) {
       expect(find.text(item.label), findsOneWidget);
@@ -66,8 +68,12 @@ void main() {
     expect(find.text('C'), findsOneWidget);
   });
 
-  testWidgets('applies crossAxisSpacing, mainAxisSpacing, and padding', (tester) async {
-    final items = [TestGridItem('id1', label: 'A'), TestGridItem('id2', label: 'B')];
+  testWidgets('applies crossAxisSpacing, mainAxisSpacing, and padding',
+      (tester) async {
+    final items = [
+      TestGridItem('id1', label: 'A'),
+      TestGridItem('id2', label: 'B')
+    ];
     await tester.pumpWidget(buildTestGrid(
       items: items,
       crossAxisSpacing: 20,
@@ -81,8 +87,10 @@ void main() {
 
   testWidgets('uses provided scroll controller', (tester) async {
     final controller = ScrollController();
-    final items = List.generate(20, (i) => TestGridItem('id$i', label: 'Item $i'));
-    await tester.pumpWidget(buildTestGrid(items: items, controller: controller));
+    final items =
+        List.generate(20, (i) => TestGridItem('id$i', label: 'Item $i'));
+    await tester
+        .pumpWidget(buildTestGrid(items: items, controller: controller));
     expect(controller.hasClients, isTrue);
   });
 
@@ -98,7 +106,10 @@ void main() {
 
   testWidgets('updates layout when items or columns change', (tester) async {
     final items1 = [TestGridItem('id1', label: 'A')];
-    final items2 = [TestGridItem('id1', label: 'A'), TestGridItem('id2', label: 'B')];
+    final items2 = [
+      TestGridItem('id1', label: 'A'),
+      TestGridItem('id2', label: 'B')
+    ];
     await tester.pumpWidget(buildTestGrid(items: items1, maxColumns: 2));
     expect(find.text('A'), findsOneWidget);
     expect(find.text('B'), findsNothing);

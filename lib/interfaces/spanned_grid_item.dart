@@ -14,7 +14,7 @@ abstract class SpannedGridItem {
 extension SpannedGridItemDefaults on SpannedGridItem {
   /// Get effective grid span - defaults to full width if not specified
   int getEffectiveSpan(int maxColumns) {
-    if(maxColumns < 1) {
+    if (maxColumns < 1) {
       return 12;
     }
     return gridSpan?.clamp(1, maxColumns) ?? maxColumns;

@@ -55,7 +55,8 @@ class MyApp extends StatelessWidget {
           child: SpannedGridView<SpannedGridItem>(
             items: items,
             maxColumns: 3, // Set the maximum number of columns
-            itemBuilder: (context, item, index) => ItemWidgetFactory.build(context, item, index),
+            itemBuilder: (context, item, index) =>
+                ItemWidgetFactory.build(context, item, index),
           ),
         ),
       ),

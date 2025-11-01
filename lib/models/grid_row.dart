@@ -1,4 +1,3 @@
-
 import 'package:flutter_spanned_grid_view/interfaces/spanned_grid_item.dart';
 
 /// Represents a single row in the grid with its items
