@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_spanned_grid_view/flutter_spanned_grid_view.dart';
-import 'package:flutter_spanned_grid_view/interfaces/spanned_grid_item.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 class TestGridItem implements SpannedGridItem {
   @override

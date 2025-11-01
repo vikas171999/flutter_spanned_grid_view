@@ -65,7 +65,7 @@ class ItemWidgetFactory {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18),
         ),
-        shadowColor: Colors.blueAccent.withOpacity(0.4),
+        shadowColor: Colors.blueAccent.withValues(alpha: 0.4),
         color: Colors.blueAccent,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -94,7 +94,7 @@ class ItemWidgetFactory {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18),
         ),
-        shadowColor: Colors.green.withOpacity(0.4),
+        shadowColor: Colors.green.withValues(alpha: 0.4),
         color: Colors.green,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
