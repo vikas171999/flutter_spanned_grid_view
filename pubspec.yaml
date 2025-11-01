@@ -1,6 +1,6 @@
 name: flutter_spanned_grid_view
-description: "Flutter Spanned Grid View"
-version: 1.0.0
+description: "Flutter widget offering a performant spanned grid with aligned grid rows for dynamic dashboards and complex responsive UIs."
+version: 1.0.1
 repository: https://github.com/vikas171999/flutter_spanned_grid_view.git
 
 environment:

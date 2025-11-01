@@ -50,7 +50,8 @@ class SpannedGridView<T extends SpannedGridItem> extends StatefulWidget {
   State<SpannedGridView<T>> createState() => _SpannedGridViewState<T>();
 }
 
-class _SpannedGridViewState<T extends SpannedGridItem> extends State<SpannedGridView<T>> {
+class _SpannedGridViewState<T extends SpannedGridItem>
+    extends State<SpannedGridView<T>> {
   ScrollController _scrollController = ScrollController();
   List<GridRow<T>> _rows = [];
   int _effectiveMaxColumns = 2;
@@ -59,7 +60,7 @@ class _SpannedGridViewState<T extends SpannedGridItem> extends State<SpannedGrid
   void initState() {
     super.initState();
     var widgetScrollController = widget.scrollController;
-    if(widgetScrollController != null) {
+    if (widgetScrollController != null) {
       _scrollController = widgetScrollController;
     }
     _calculateRows();
@@ -116,9 +117,8 @@ class _SpannedGridViewState<T extends SpannedGridItem> extends State<SpannedGrid
     }
 
     // Save current scroll position before recalculating
-    final currentScrollOffset = _scrollController.hasClients
-        ? _scrollController.offset
-        : 0.0;
+    final currentScrollOffset =
+        _scrollController.hasClients ? _scrollController.offset : 0.0;
 
     // Auto-calculate max columns if not provided
     _effectiveMaxColumns = widget.maxColumns ?? _calculateMaxColumns();
@@ -131,7 +131,8 @@ class _SpannedGridViewState<T extends SpannedGridItem> extends State<SpannedGrid
       int currentRowSpan = 0;
 
       // Build one row's metadata
-      while (currentRowSpan < _effectiveMaxColumns && itemIndex < widget.items.length) {
+      while (currentRowSpan < _effectiveMaxColumns &&
+          itemIndex < widget.items.length) {
         final item = widget.items[itemIndex];
         final itemSpan = item.getEffectiveSpan(_effectiveMaxColumns).toInt();
 
@@ -168,9 +169,8 @@ class _SpannedGridViewState<T extends SpannedGridItem> extends State<SpannedGrid
     if (_scrollController.hasClients && currentScrollOffset > 0) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (_scrollController.hasClients) {
-          _scrollController.jumpTo(
-              currentScrollOffset.clamp(0.0, _scrollController.position.maxScrollExtent)
-          );
+          _scrollController.jumpTo(currentScrollOffset.clamp(
+              0.0, _scrollController.position.maxScrollExtent));
         }
       });
     }

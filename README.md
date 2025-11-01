@@ -4,7 +4,7 @@ A highly flexible and performant Flutter package for displaying grid layouts wit
 
 ## Features
 
-- Display items in a grid with variable column spans (like Pinterest or Android's SpannedGrid)
+- Display items in a grid with variable column spans (like Android's SpannedGrid)
 - Works with any data type via a generic interface
 - Efficient: Only builds widgets as they enter the viewport (like `ListView.builder`)
 - Customizable item widgets via builder function
@@ -12,13 +12,15 @@ A highly flexible and performant Flutter package for displaying grid layouts wit
 - Easy integration with existing Flutter projects
 - Null safety and sound typing
 
+<img src="https://raw.githubusercontent.com/vikas171999/flutter_spanned_grid_view/refs/heads/main/example/assets/example.jpg" alt="Spanned Grid Example" width="250" />
+
 ## Getting Started
 
 Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_spanned_grid_view: ^1.0.0
+  flutter_spanned_grid_view: ^1.0.1
 ```
 
 Then run:
@@ -109,9 +111,7 @@ Implement this interface for your data model:
 
 ## Roadmap
 
-- Drag & drop support
 - Animations
-- RTL support
 - More layout options
 
 ## Contributing
@@ -120,14 +120,12 @@ Contributions are welcome! Please open issues or submit pull requests on [GitHub
 
 ## License
 
-MIT License. See [LICENSE](https://pub.dev/packages/flutter_staggered_grid_view/license).
+MIT License. See [LICENSE](LICENSE).
 
 ## Keywords
 
-flutter, grid, spanned, staggered, layout, builder, responsive, custom, widget, list, performance, dynamic, columns, masonry, pinterest, android, flexible, dart
+flutter, grid, spanned, staggered, layout, builder, responsive, custom, widget, list, performance, dynamic, columns, masonry, android, flexible, dart
 
 ---
 
 For more details and advanced usage, see the [example](example/) directory.
-
-

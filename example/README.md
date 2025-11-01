@@ -1,16 +1,40 @@
-# example
+# Example: flutter_spanned_grid_view
 
-A new Flutter project.
+This example demonstrates how to use the `flutter_spanned_grid_view` package with custom item types, dynamic spans, and custom widgets in a Flutter app.
 
-## Getting Started
+## Features Shown
+- Custom item types implementing `SpannedGridItem`
+- Assigning different `gridSpan` values to items
+- Displaying items in a spanned grid layout
 
-This project is a starting point for a Flutter application.
+## Running the Example
 
-A few resources to get you started if this is your first Flutter project:
+1. Ensure you have Flutter installed. For setup instructions, see the [Flutter documentation](https://docs.flutter.dev/get-started/install).
+2. In this directory, run:
+   ```sh
+   flutter pub get
+   flutter run
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Example Usage
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Below is a simplified snippet from `lib/main.dart`:
+
+```dart
+final List<SpannedGridItem> items = [
+  ItemTypeA(id: 'a1', title: 'Alpha', gridSpan: 2),
+  ItemTypeB(id: 'b1', number: 42, gridSpan: 1),
+  // ... more items ...
+];
+
+SpannedGridView(
+  itemCount: items.length,
+  itemBuilder: (context, index) {
+    final item = items[index];
+    // Return a widget based on item type
+  },
+  getGridSpan: (index) => items[index].gridSpan ?? 1,
+)
+```
+
+For more details, see the full source in `lib/main.dart`.

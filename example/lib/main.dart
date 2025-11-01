@@ -1,9 +1,12 @@
+// Example usage of flutter_spanned_grid_view
+// Demonstrates custom item types, dynamic spans, and custom widgets.
+
 import 'package:flutter/material.dart';
 import 'package:flutter_spanned_grid_view/flutter_spanned_grid_view.dart';
 
-
 void main() => runApp(const MyApp());
 
+// Example item type A
 class ItemTypeA implements SpannedGridItem {
   @override
   final String id;
@@ -14,6 +17,7 @@ class ItemTypeA implements SpannedGridItem {
   ItemTypeA({required this.id, required this.title, this.gridSpan});
 }
 
+// Example item type B
 class ItemTypeB implements SpannedGridItem {
   @override
   final String id;
@@ -29,6 +33,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // List of items with different types and spans
     final List<SpannedGridItem> items = [
       ItemTypeA(id: 'a1', title: 'Alpha', gridSpan: 2),
       ItemTypeB(id: 'b1', number: 42, gridSpan: 1),
@@ -46,9 +51,10 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(title: const Text('SpannedGridView Example')),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
+          // SpannedGridView displays items with their specified spans
           child: SpannedGridView<SpannedGridItem>(
             items: items,
-            maxColumns: 3,
+            maxColumns: 3, // Set the maximum number of columns
             itemBuilder: (context, item, index) => ItemWidgetFactory.build(context, item, index),
           ),
         ),
@@ -57,6 +63,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// Factory to build widgets for different item types
 class ItemWidgetFactory {
   static Widget build(BuildContext context, SpannedGridItem item, int index) {
     if (item is ItemTypeA) {
